@@ -1,0 +1,10 @@
+#menu li a:hover{
+    background-color: rgb(177, 160, 160);
+}
+.menu-selected{
+    background-color: #206BC4;
+}
+.menu-selected:hover{
+    background-color: transparent;
+}
+
