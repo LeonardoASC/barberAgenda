@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Agendamento;
 use App\Http\Requests\StoreAgendamentoRequest;
 use App\Http\Requests\UpdateAgendamentoRequest;
+use Carbon\CarbonImmutable;
+use Illuminate\Http\Request;
 
 class AgendamentoController extends Controller
 {
@@ -13,7 +15,12 @@ class AgendamentoController extends Controller
      */
     public function index()
     {
-        return view('pages.agendamento.index');
+        $dataInicial = CarbonImmutable::now();
+        $datas = [];
+        for ($i = 0; $i <= 10; $i++) {
+            $datas[] = $dataInicial->addDays($i)->toDateString();
+        }
+        return view('pages.agendamento.index', compact('datas'));
     }
 
     /**

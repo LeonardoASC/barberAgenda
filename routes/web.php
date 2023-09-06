@@ -23,3 +23,4 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 
 Route::resource('agendamento', App\Http\Controllers\AgendamentoController::class);
+Route::resource('horario', App\Http\Controllers\HorarioController::class);
