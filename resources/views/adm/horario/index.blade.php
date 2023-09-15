@@ -23,11 +23,11 @@
                             <tr>
                                 <td class="fw-bold fs-3">{{ \Carbon\Carbon::parse($horario->hora)->format('H:i') }}</td>
                                 <td class="text-end">
-                                    <a href="{{ route('horario.edit', ['horario' => $horario->id]) }}" class="btn btn-outline-secondary btn-sm mr-2">Editar</a>
+                                    <a href="{{ route('horario.edit', ['horario' => $horario->id]) }}" class="btn btn-outline-secondary fs-5 mr-2">Editar</a>
                                     <form action="{{ route('horario.destroy', $horario->id) }}" method="POST" class="d-inline">
                                         @csrf
                                         @method('DELETE')
-                                        <button class="btn btn-outline-danger btn-sm" type="submit">Excluir</button>
+                                        <button class="btn btn-outline-danger fs-5" type="submit">Excluir</button>
                                     </form>
                                 </td>
                             </tr>
