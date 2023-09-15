@@ -11,13 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('agendamentos', function (Blueprint $table) {
+        Schema::create('dado_pessoals', function (Blueprint $table) {
             $table->id();
-            $table->string('nome');
-            $table->string('dia');
-            $table->string('horario');
-            $table->string('tipo_servico');
-            $table->string('servico_especifico');
             $table->timestamps();
         });
     }
@@ -27,6 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('agendamentos');
+        Schema::dropIfExists('dado_pessoals');
     }
 };

@@ -34,9 +34,12 @@ class AgendamentoController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreAgendamentoRequest $request)
+    public function store(Request $request)
     {
-        //
+        $agendamento = new Agendamento();
+        $agendamento->fill($request->all());
+        $agendamento->save();
+        return redirect()->route('inicio')->with('success', 'Agendamento salvo com sucesso!');
     }
 
     /**
