@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+{{-- <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
     <div class="container">
         <a class="navbar-brand" href="{{ url('/') }}">
             {{ config('app.name', 'Laravel') }}
@@ -50,4 +50,36 @@
             </ul>
         </div>
     </div>
-</nav>
+</nav> --}}
+<header class="navbar navbar-expand-sm navbar-light d-print-none">
+    <div class="container-xl">
+        <h1 class="navbar-brand navbar-brand-autodark d-none-navbar-horizontal pe-0 pe-md-3">
+            <a href="#">
+                {{-- <img src="..." width="110" height="32" alt="Tabler" class="navbar-brand-image" /> --}}
+            </a>
+        </h1>
+
+        <div class="navbar-nav flex-row order-md-last">
+            <div class="nav-item">
+                @auth
+                    <div class="dropdown">
+                        <a href="#" class="btn dropdown-toggle" data-bs-toggle="dropdown">Olá,
+                            {{ strtok(auth()->user()->name, ' ') }}</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="">
+                                Perfil
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <form
+                                action="{{ route((str_contains(Route::currentRouteName(), 'admin') ? 'admin.' : '') . 'logout') }}"
+                                method="post">
+                                @csrf
+                                <button type="submit" class="dropdown-item">Logout</button>
+                            </form>
+                        </div>
+                    </div>
+                @endauth
+            </div>
+        </div>
+    </div>
+</header>

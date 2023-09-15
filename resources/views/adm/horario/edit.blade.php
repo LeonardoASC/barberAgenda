@@ -1,4 +1,4 @@
-@extends('layouts.guest')
+@extends('layouts.app')
 @section('content')
 <div class="container">
     <h1>Formulário de hora</h1>

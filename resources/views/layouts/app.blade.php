@@ -23,10 +23,6 @@
 <body>
     <div id="app">
         @include('layouts._partials.navbar')
-        {{-- <main class="py-4">
-            @include('layouts._partials.sidebar')
-            @yield('content')
-        </main> --}}
         <div class="page">
             <!-- Sidebar -->
             @include('layouts._partials.sidebar')
@@ -51,5 +47,29 @@
         </div>
 
     </div>
+    <script>
+        @if (Session::has('success'))
+            toastr.options = {
+                "closeButton": true,
+                "progressBar": true,
+                "extendedTimeOut ": 1000,
+            }
+            toastr.success("{{ session('success') }}");
+        @endif
+
+        @if (Session::has('error'))
+            toastr.options = {
+                "closeButton": true,
+                "progressBar": true,
+                "extendedTimeOut ": 1000,
+            }
+            toastr.error("{{ session('error') }}");
+        @endif
+    </script>
+
+
+    <script>
+        @yield('js')
+    </script>
 </body>
 </html>

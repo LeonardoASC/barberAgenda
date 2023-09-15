@@ -25,3 +25,4 @@ Route::resource('dadospessoais', App\Http\Controllers\DadoPessoalController::cla
 Route::resource('servico', App\Http\Controllers\ServicoController::class);
 
 Route::resource('agendamento', App\Http\Controllers\AgendamentoController::class);
+Route::resource('horario', App\Http\Controllers\HorarioController::class);

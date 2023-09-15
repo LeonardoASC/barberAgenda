@@ -18,7 +18,7 @@ class HorarioController extends Controller
         $horarios = Horario::all();
 
 
-        return view('pages.horario.index', compact('horarios') );
+        return view('adm.horario.index', compact('horarios') );
     }
 
     /**
@@ -26,7 +26,7 @@ class HorarioController extends Controller
      */
     public function create()
     {
-        return view('pages.horario.create');
+        return view('adm.horario.create');
     }
 
     /**
@@ -34,6 +34,7 @@ class HorarioController extends Controller
      */
     public function store(Request $request)
     {
+        
         Horario::create($request->all());
         return redirect()->route('horario.index');
     }
@@ -51,7 +52,7 @@ class HorarioController extends Controller
      */
     public function edit(Horario $horario)
     {
-        return view('pages.horario.edit', ['horario' => $horario]);
+        return view('adm.horario.edit', ['horario' => $horario]);
     }
 
     /**

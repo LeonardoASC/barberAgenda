@@ -17,7 +17,6 @@
                             <select class="form-control" id="tipo_servico" name="tipo_servico">
                                 <option value="Manutenção">Manutenção</option>
                                 <option value="Instalação">Instalação</option>
-
                             </select>
                         </div>
 
