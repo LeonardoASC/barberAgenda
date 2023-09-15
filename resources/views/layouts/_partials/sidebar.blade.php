@@ -26,9 +26,9 @@
                     </a>
                 </li>
                 <li class="nav-item border-top fs-3 @if (Route::getCurrentRoute()->uri == 'admin') menu-selected rounded @endif">
-                    <a class="nav-link" href="./">
+                    <a class="nav-link" href="{{route('servico.index')}}">
                         <span class="nav-link-title text-white">
-                            <i class="ti ti-home-2 fs-1 me-1"></i>Home
+                            <i class="ti ti-home-2 fs-1 me-1"></i>Serviço
                         </span>
                     </a>
                 </li>
