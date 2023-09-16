@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\DadoPessoal;
+use App\Models\Horario;
 use App\Http\Requests\StoreDadoPessoalRequest;
 use App\Http\Requests\UpdateDadoPessoalRequest;
 use Illuminate\Http\Request;
@@ -14,7 +15,8 @@ class DadoPessoalController extends Controller
      */
     public function index()
     {
-        return view('pages.dadospessoais.index');
+        $horarios = Horario::all();
+        return view('pages.dadospessoais.index', compact('horarios'));
     }
 
     /**
@@ -33,7 +35,11 @@ class DadoPessoalController extends Controller
 
         $request->validate([
             'nome' => 'required|string',
-            'dia' => 'required|date',
+            'dia' => [
+                'required',
+                'date',
+                'after_or_equal:' . Carbon::today()->format('Y-m-d'), // Garante que a data seja hoje ou posterior
+            ],
             'horario' => 'required|string'
         ]);
 
