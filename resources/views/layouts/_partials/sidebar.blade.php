@@ -12,7 +12,7 @@
         <div class="collapse navbar-collapse list-group" id="sidebar-menu">
             <ul class="navbar-nav pt-lg-3 ms-2" id="menu">
                 <li class="nav-item border-top fs-3 @if (Route::getCurrentRoute()->uri == 'home') menu-selected rounded @endif">
-                    <a class="nav-link" href="./">
+                    <a class="nav-link" href="./home">
                         <span class="nav-link-title text-white">
                             <i class="ti ti-home-2 fs-1 me-1"></i>Home
                         </span>
@@ -26,9 +26,16 @@
                     </a>
                 </li>
                 <li class="nav-item border-top fs-3 @if (Route::getCurrentRoute()->uri == 'admin') menu-selected rounded @endif">
-                    <a class="nav-link" href="{{route('servico.index')}}">
+                    <a class="nav-link" href="{{route('tarefa.index')}}">
                         <span class="nav-link-title text-white">
-                            <i class="ti ti-home-2 fs-1 me-1"></i>Serviço
+                            <i class="ti ti-home-2 fs-1 me-1"></i>Tarefa
+                        </span>
+                    </a>
+                </li>
+                <li class="nav-item border-top fs-3 @if (Route::getCurrentRoute()->uri == 'admin') menu-selected rounded @endif">
+                    <a class="nav-link" href="{{route('tarefaespec.index')}}">
+                        <span class="nav-link-title text-white">
+                            <i class="ti ti-home-2 fs-1 me-1"></i>Tarefa Especifica
                         </span>
                     </a>
                 </li>

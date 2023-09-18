@@ -20,9 +20,13 @@ Route::get('/', function () {
 Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-
+// user
 Route::resource('dadospessoais', App\Http\Controllers\DadoPessoalController::class);
 Route::resource('servico', App\Http\Controllers\ServicoController::class);
-
 Route::resource('agendamento', App\Http\Controllers\AgendamentoController::class);
+// adm
 Route::resource('horario', App\Http\Controllers\HorarioController::class);
+Route::resource('tarefa', App\Http\Controllers\TarefaController::class);
+Route::resource('tarefaespec', App\Http\Controllers\TarefaEspecController::class);
+
+
