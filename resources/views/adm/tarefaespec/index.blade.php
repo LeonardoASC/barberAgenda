@@ -7,7 +7,7 @@
     <div class="card">
         <div class="card-header d-flex justify-content-between align-items-center">
             <h3 class="card-title fw-bold fs-1">Tipos de atendimento</h3>
-            <a href="{{ route('tarefa.create') }}" class="btn btn-primary">Cadastrar</a>
+            <a href="{{ route('tarefaespec.create') }}" class="btn btn-primary">Cadastrar</a>
         </div>
         <div class="card-body">
             @if ($tarefaespecs->isEmpty())
