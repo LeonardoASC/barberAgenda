@@ -29,7 +29,13 @@
                             </select>
                         </div>
 
-                        <button type="submit" class="btn btn-primary btn-block mt-4">Selecionar</button>
+                        {{-- <button type="submit" class="btn btn-primary btn-block mt-4">Selecionar</button> --}}
+                        <div class="mt-2">
+                            <button type="submit" class="btn btn-primary">Selecionar</button>
+                            <a href="{{ url()->previous() }}">
+                                <button type="button" class="btn btn-primary">Voltar</button>
+                            </a>
+                        </div>
                     </form>
                 </div>
             </div>
