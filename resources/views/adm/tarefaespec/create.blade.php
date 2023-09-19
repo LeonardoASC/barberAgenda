@@ -34,12 +34,10 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="imagem">Imagem:</label>
-                                <div class="custom-file">
-                                    <input type="file" class="custom-file-input" name="imagem" id="imagem" required>
-                                    <label class="custom-file-label" for="imagem">Escolha uma imagem</label>
-                                </div>
+                                <label for="imagem">Link da Imagem:</label>
+                                <input type="text" class="form-control" name="imagem" id="imagem" placeholder="Insira o link da imagem" required>
                             </div>
+
 
                             <div class="form-group">
                                 <label for="tarefa_id">Tarefa:</label>
