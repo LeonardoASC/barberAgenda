@@ -38,7 +38,7 @@ class DadoPessoalController extends Controller
             'dia' => [
                 'required',
                 'date',
-                'after_or_equal:' . Carbon::today()->format('Y-m-d'), // Garante que a data seja hoje ou posterior
+                // 'after_or_equal:' . Carbon::today()->format('Y-m-d'),
             ],
             'horario' => 'required|string'
         ]);

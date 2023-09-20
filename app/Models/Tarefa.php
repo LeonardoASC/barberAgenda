@@ -10,4 +10,9 @@ class Tarefa extends Model
     use HasFactory;
     protected $table = 'tarefas';
     protected $fillable = ['name'];
+
+    public function tarefaespec()
+    {
+        return $this->hasMany(TarefaEspec::class);
+    }
 }

@@ -23,6 +23,9 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 // user
 Route::resource('dadospessoais', App\Http\Controllers\DadoPessoalController::class);
 Route::resource('servico', App\Http\Controllers\ServicoController::class);
+// routes/web.php
+Route::get('subservices',[App\Http\Controllers\ServicoController::class, 'getSubServices'])->name('servico.getSubServices');
+
 Route::resource('agendamento', App\Http\Controllers\AgendamentoController::class);
 // adm
 Route::resource('horario', App\Http\Controllers\HorarioController::class);

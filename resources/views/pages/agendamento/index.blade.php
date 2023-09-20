@@ -24,7 +24,6 @@
                             <input type="hidden" name="servico_especifico" value="{{session('servico_especifico')}}">
                             <div class="">
                                 <button type="submit" class="btn btn-primary">Agendar</button>
-
                                 <a href="{{ url()->previous() }}">
                                     <button type="button" class="btn btn-primary">Voltar</button>
                                 </a>

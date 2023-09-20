@@ -5,10 +5,10 @@
             <div class="col-md-6">
                 <div class="card">
                     <div class="card-header bg-primary text-white">
-                        <h4 class="mb-0">Seleção de Serviço</h4>
+                        <h4 class="mb-0">Seleção de Sub-Serviços</h4>
                     </div>
                     <div class="card-body">
-                        <form action="{{ route('servico.store') }}" method="post">
+                        <form action="{{ route('agendamento.index') }}" method="post">
                             @csrf
 
                            <div class="form-group">
