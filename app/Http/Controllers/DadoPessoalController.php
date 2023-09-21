@@ -4,9 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Models\DadoPessoal;
 use App\Models\Horario;
+use App\Models\Agendamento;
 use App\Http\Requests\StoreDadoPessoalRequest;
 use App\Http\Requests\UpdateDadoPessoalRequest;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
+
 
 class DadoPessoalController extends Controller
 {
@@ -16,6 +19,7 @@ class DadoPessoalController extends Controller
     public function index()
     {
         $horarios = Horario::all();
+
         return view('pages.dadospessoais.index', compact('horarios'));
     }
 
@@ -35,12 +39,11 @@ class DadoPessoalController extends Controller
 
         $request->validate([
             'nome' => 'required|string',
-            'dia' => [
-                'required',
-                'date',
-                // 'after_or_equal:' . Carbon::today()->format('Y-m-d'),
-            ],
-            'horario' => 'required|string'
+            'dia' => ['required','date',],
+            'horario' => ['required', 'date_format:H:i', Rule::unique('agendamentos')->where(function ($query) use ($request) {
+                return $query->where('dia', $request->dia)
+                             ->where('horario', $request->horario);
+            })]
         ]);
 
 

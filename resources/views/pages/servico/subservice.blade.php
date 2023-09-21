@@ -8,14 +8,14 @@
                         <h4 class="mb-0">Seleção de Sub-Serviços</h4>
                     </div>
                     <div class="card-body">
-                        <form action="{{ route('agendamento.index') }}" method="post">
+                        <form action="{{ route('servico.postSubServices') }}" method="post">
                             @csrf
 
                            <div class="form-group">
-                                <label for="tipo_servico">Tipo de Serviço:</label>
-                                <select class="form-control" id="tipo_servico" name="tipo_servico">
+                                <label for="servico_especifico">Tipo de Serviço:</label>
+                                <select class="form-control" id="servico_especifico" name="servico_especifico">
                                     @foreach ($tarefas as $tarefa)
-                                        <option value="{{$tarefa->id}}">{{$tarefa->name}}</option>
+                                        <option value="{{$tarefa->id}}">{{$tarefa->nome}}</option>
                                     @endforeach
                                 </select>
                             </div>

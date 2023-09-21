@@ -25,6 +25,7 @@ Route::resource('dadospessoais', App\Http\Controllers\DadoPessoalController::cla
 Route::resource('servico', App\Http\Controllers\ServicoController::class);
 // routes/web.php
 Route::get('subservices',[App\Http\Controllers\ServicoController::class, 'getSubServices'])->name('servico.getSubServices');
+Route::post('subservices',[App\Http\Controllers\ServicoController::class, 'postSubServices'])->name('servico.postSubServices');
 
 Route::resource('agendamento', App\Http\Controllers\AgendamentoController::class);
 // adm

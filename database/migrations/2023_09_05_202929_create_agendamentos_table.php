@@ -14,10 +14,12 @@ return new class extends Migration
         Schema::create('agendamentos', function (Blueprint $table) {
             $table->id();
             $table->string('nome');
-            $table->string('dia');
-            $table->string('horario');
+            $table->date('dia');
+            $table->time('horario');
             $table->string('tipo_servico');
             $table->string('servico_especifico');
+
+            $table->unique(['dia', 'horario']);
             $table->timestamps();
         });
     }

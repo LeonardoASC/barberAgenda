@@ -38,7 +38,7 @@
                                             </div> --}}
                                         </div>
                                     </td>
-                                    <td>{{ $tarefaespec->tarefa->name }}</td>
+                                    <td>{{$tarefaespec->tarefa_id}} - {{ $tarefaespec->tarefa->name }}</td>
 
 
                                     {{-- @foreach ($tarefaespecs as $tarefa)

@@ -16,8 +16,9 @@
 
                                 <div class="form-group">
                                     <label for="nome">Nome:</label>
-                                    <input type="text" class="form-control" id="nome" name="nome" required
+                                    <input type="text" class="form-control" id="nome" name="nome" 
                                         placeholder="Digite seu nome...">
+                                        {{ $errors->has('nome') ? $errors->first('nome') : '' }}
                                 </div>
 
 
@@ -26,6 +27,7 @@
                                     <input type="date" class="form-control" id="dia" name="dia" required
                                         min="{{ \Carbon\Carbon::today()->format('Y-m-d') }}"
                                         max="{{ \Carbon\Carbon::today()->addDays(10)->format('Y-m-d') }}">
+                                        {{ $errors->has('dia') ? $errors->first('dia') : '' }}
                                 </div>
 
 
@@ -40,9 +42,10 @@
                                             {{-- {{ \Carbon\Carbon::parse($horario->hora)->format('H:i') }} --}}
                                         @endforeach
                                     </select>
+                                    {{ $errors->has('horario') ? $errors->first('horario') : '' }}
                                 </div>
 
-                            
+
 
                                 <div class="mt-2">
                                     <button type="submit" class="btn btn-primary">Selecionar</button>

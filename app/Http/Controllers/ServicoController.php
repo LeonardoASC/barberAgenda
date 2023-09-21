@@ -7,6 +7,7 @@ use App\Models\Tarefa;
 use App\Models\TarefaEspec;
 use App\Http\Requests\StoreServicoRequest;
 use App\Http\Requests\UpdateServicoRequest;
+
 use Illuminate\Http\Request;
 
 class ServicoController extends Controller
@@ -48,6 +49,8 @@ class ServicoController extends Controller
         return redirect()->route('servico.getSubServices')->with('success', 'Serviço selecionado com sucesso!');
     }
 
+
+
     /**
      * Display the specified resource.
      */
@@ -83,18 +86,22 @@ class ServicoController extends Controller
     public function getSubServices()
     {
         // dd(session('tipo_servico'));
-        $tarefas = TarefaEspec::where('tarefa_id', 1)->get();
+
+        $tarefas = TarefaEspec::where('tarefa_id', session('tipo_servico'))->get();
+        // dd($tarefas);
         // session('tipo_servico')
         return view('pages.servico.subservice', compact('tarefas'));
     }
-
-    public function postSubServices(Resquest $resquest, Servico $servico)
+    
+    public function postSubServices(Request $request)
     {
         $request->validate([
             'servico_especifico' => 'required|string'
         ]);
+
         session(['servico_especifico' => $request->servico_especifico]);
 
         return redirect()->route('agendamento.index')->with('success', 'Serviço selecionado com sucesso!');
     }
+
 }
